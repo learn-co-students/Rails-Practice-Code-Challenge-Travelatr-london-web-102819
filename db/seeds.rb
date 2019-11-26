@@ -21,14 +21,14 @@ end
     bio: Faker::Hipster.paragraph,
     age: (13..100).to_a.sample
   })
+end
 
-  (2..6).to_a.sample.times do 
+  70.times do 
     Post.create({
       title: Faker::Hipster.sentence(3),
       content: Faker::Hipster.paragraphs(4),
-      likes: 0,
-      blogger: blogger,
-      destination: Destination.all.sample
+      likes: rand(0..10),
+      blogger_id: Blogger.all.pluck(:id).sample,
+      destination_id: Destination.all.pluck(:id).sample
     })
   end
-end

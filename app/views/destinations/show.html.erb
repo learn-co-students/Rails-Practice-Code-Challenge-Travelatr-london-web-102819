@@ -1,0 +1,16 @@
+<h2><%= @destination.name %></h2>
+
+<% if !@destination.posts.empty?%>
+    <h3>Most five recent posts:</h3>
+
+    <% @destination.most_five_recent.each do |p|%>
+        <p><%= p %></p>
+    <% end %>
+
+    <h3>Featured post:</h3>
+
+    <%= link_to(@destination.featured_post.title, post_path(@destination.featured_post))%>
+
+    <h4>Average age of all bloggers for this destination: <%= @destination.average_age%></h3>
+
+<% end %>

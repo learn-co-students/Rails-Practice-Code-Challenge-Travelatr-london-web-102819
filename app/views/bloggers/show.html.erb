@@ -1,0 +1,16 @@
+<h2><%= @blogger.name%></h2>
+
+<p>Total likes: <%= @blogger.total_likes%></p>
+
+<%if !@blogger.posts.empty?%>
+    <p><strong>Featured post:</strong> <%= link_to(@blogger.featured_post.title, post_path(@blogger.featured_post))%></p>
+
+    <h3>Top five destinations</h3>
+    
+    <ol>
+        <% @blogger.top_five_destinations.each do |d|%>
+            <li><%= d.name%></li>
+     <% end %>
+    </ol>
+
+<% end %>
