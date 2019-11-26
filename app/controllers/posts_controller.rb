@@ -27,14 +27,11 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
-    if @post.update(post_params)
-      @post.save
-      puts "******************************redirecting"
+    @post.update(post_params)
+    if @post.valid?
       redirect_to post_path(@post)
     else
-      puts "*******************************"
-      render :edit
+      redirect_to edit_post_url
     end
   end
 
