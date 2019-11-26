@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(post_params)
+    post.likes = 0
 
     if post.save
       redirect_to post
@@ -33,6 +34,14 @@ class PostsController < ApplicationController
     else
       redirect_to edit_post_url
     end
+  end
+
+  def liked
+    post = Post.find(params[:id])
+
+    post.likes += 1
+    post.save
+    redirect_to post_path(post)
   end
 
   private
