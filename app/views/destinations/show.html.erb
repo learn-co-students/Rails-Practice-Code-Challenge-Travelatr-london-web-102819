@@ -1,0 +1,4 @@
+<%=@destination.name%>
+<% @destination.most_recent_5.each do |p|%><br>
+<%=link_to p.title, post_path(p)%>
+<%end %>
