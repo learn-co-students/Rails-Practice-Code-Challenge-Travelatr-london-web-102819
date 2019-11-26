@@ -1,0 +1,6 @@
+Title: <%=@post.title%><br>
+Content: <%=@post.content%><br>
+Likes: <%=@post.likes%><br>
+Author: <%=link_to @post.blogger.name, @post.blogger%><br>
+Destitation: <%=link_to @post.destination.name, destination_path(@post.destination)%><br>
+<%=link_to "like post",post_liked_path, method:"post"%>

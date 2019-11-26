@@ -1,0 +1,10 @@
+<h1><%=@blogger.name%><h1>
+Bio:<%=@blogger.bio%><br>
+Age :<%=@blogger.age%><br>
+
+Total likes:<%=@blogger.total_likes%><br>
+<%if @blogger.posts.length != 0 %>
+Featured post:<%=link_to @blogger.featured_post.title, post_path(@blogger.featured_post)%><br>
+<%end%>
+Top 5 destinations: <%=@blogger.top_5_destinations%>
+

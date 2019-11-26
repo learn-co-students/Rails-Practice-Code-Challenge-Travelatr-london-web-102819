@@ -1,0 +1,14 @@
+
+<%= form_for(@post) do |f| %>
+
+Author: <%= f.collection_select :blogger_id, Blogger.all, :id, :name%><br>
+Destination: <%= f.collection_select :destination_id, Destination.all, :id, :name%><br>
+<label>Title:</label><br>
+  <%= f.text_field :title %><br>
+  <label>Content:</label><br>
+  <%= f.text_area :content %><br>
+
+  
+
+  <%= f.submit %>
+<% end %>
