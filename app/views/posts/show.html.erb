@@ -1,0 +1,9 @@
+<h1><%=@post.title%></h1><br><br>
+
+<b> <%=@post.content%></b><br><br>
+<b> Total Likes: <%=@post.likes%><br><br>
+<%=link_to "Author: #{@post.blogger.name}", blogger_path(@post.blogger.id)%><br><br>
+
+<%=link_to "Desination: #{@post.destination.name}", destination_path(@post.destination.id)%><br><br>
+
+<%=link_to"Click here to like", likes_path(@post.id)%>

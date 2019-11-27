@@ -1,0 +1,17 @@
+<h1> <%=@blogger.name%></h1><br>
+
+<h2> Total likes: </h2><br>
+<b> <%=@blogger.post_likes%></b><br>
+
+<h2> Most loved post by you: </h2> <br>
+<b> <%=link_to "Tittle:#{@blogger.most_liked_post.title}",post_path(@blogger.most_liked_post.id)%></b> <br>
+
+
+
+<h3> Top five destinations of <%=@blogger.name%></h3>
+<b> <% @blogger.top_five_most_written.map do|element|%>
+    <%= element.first.name%><br>
+    <%end%>
+</b>
+
+ 
