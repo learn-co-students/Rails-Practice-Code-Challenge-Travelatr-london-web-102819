@@ -1,0 +1,9 @@
+<h1>Edit post form</h1>
+<%= "Error, make sure post has a title and is at least 100 characters long!" if @error=true %>
+<%= form_for(@post) do |f| %>
+    Blogger: <%= f.collection_select :blogger_id, Blogger.all, :id, :name %><br>
+    Destination: <%= f.collection_select :destination_id, Destination.all, :id, :name %><br>
+    Post title: <%= f.text_field :title %><br>
+    Post content: <%= f.text_area :content %><br>
+    <%= f.submit %>
+<%end%>
