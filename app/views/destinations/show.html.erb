@@ -1,0 +1,11 @@
+<h1><%=@destination.name%>, <%=@destination.country%></h1>
+<h3>Most recent posts:</h3>
+<%@last_posts.each do |post|%>
+    <b><%= link_to post.title, post_path(post) %></b><br>
+<%end%>
+<%if !!@featured_post%>
+<b><%= link_to "Featured post", post_path(@featured_post) %></b><br>
+<%else%>
+<b><%="no featured post"%></b><br>
+<%end%>
+<b>Average blogger age: <%= @average_age %></b><br>
