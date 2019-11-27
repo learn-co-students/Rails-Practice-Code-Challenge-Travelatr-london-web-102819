@@ -1,0 +1,17 @@
+<h1> Destination:</h1><br>
+<p>Name: <%=@destination.name%></p>
+<p>Country: <%=@destination.country%></p><br><br>
+
+<% if !@destination.posts.empty?%>
+    <h2> Most Rencently Written about <%=@destination.name%></h2>
+        <% @destination.most_recent_5.each do|post|%>
+            <%=link_to post.title, post_path(post)%><br>
+        <%end%>
+
+    <h2> Most Liked Post about This Place: </h2><br>
+    <%=link_to @destination.most_liked.title, post_path(@destination.most_liked)%>
+ <% else %>
+    <h2> No one has written about this place yet.</h2>
+<%end%>
+
+    <h2> Bloggers who've been to <%=@destination.name%> are about <%=@destination.age_ave%> years old on average.</h2>
